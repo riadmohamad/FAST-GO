@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0866d6">
+<title>FAST GO | فاست غو</title>
+<style>
+:root{--blue:#0866d6;--navy:#10345f;--pale:#eef6ff;--ink:#172b45;--muted:#6b7d93;--line:#dce7f2}
+*{box-sizing:border-box}body{margin:0;background:#f4f8fc;color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+header{background:linear-gradient(135deg,#0756b8,#1687f5);color:#fff;padding:24px 18px 30px;border-radius:0 0 26px 26px}
+.wrap{max-width:760px;margin:auto}.brand{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;border-radius:17px;background:#fff;color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:20px;box-shadow:0 8px 22px #003d8833}.brand h1{margin:0;font-size:25px;letter-spacing:1px}.brand p{margin:4px 0 0;color:#dcecff;font-size:13px}
+.hero{margin-top:25px}.hero h2{font-size:24px;line-height:1.5;margin:0 0 6px}.hero p{margin:0;color:#e4f1ff;line-height:1.8;font-size:14px}
+main{padding:18px 14px 40px}.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:18px;margin:0 0 15px;box-shadow:0 7px 24px #163e6810}
+.section-title{font-size:17px;margin:0 0 14px;color:var(--navy)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.service{border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px 10px;text-align:center;cursor:pointer;color:var(--ink);font:inherit}
+.service .ico{font-size:25px;display:block;margin-bottom:7px}.service strong{font-size:14px}.service.active{border:2px solid var(--blue);background:var(--pale);color:#0756b8}
+label{display:block;font-size:13px;font-weight:bold;margin:13px 0 7px}input,select,textarea{width:100%;border:1px solid #cfdae7;border-radius:11px;padding:12px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}textarea{min-height:75px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{width:100%;border:0;border-radius:12px;background:var(--blue);color:#fff;padding:14px;font:inherit;font-weight:bold;font-size:15px;margin-top:16px;cursor:pointer}.btn:active{transform:scale(.99)}
+.note{font-size:12px;color:var(--muted);line-height:1.8;margin:10px 0 0}.status{display:none;background:#e9f8ef;border:1px solid #b8e5c8;color:#17653a;border-radius:12px;padding:13px;margin-top:13px;line-height:1.8;font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:0 15px 28px}.phone{color:var(--blue);font-weight:bold;direction:ltr;display:inline-block}
+@media(min-width:620px){.grid{grid-template-columns:repeat(4,1fr)}header{padding:30px 25px 36px}.hero h2{font-size:29px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <div class="brand"><div class="logo">FG</div><div><h1>FAST GO</h1><p>فاست غو — طلبك لعندك بسرعة</p></div></div>
+ <div class="hero"><h2>خدمات التوصيل ضمن محافظة حمص</h2><p>مطاعم، بقالة، صيدليات، تسوق وطلبات خاصة — من مكانك إلى باب بيتك.</p></div>
+</div></header>
+<main class="wrap">
+ <section class="card">
+  <h3 class="section-title">شو بتحب تطلب اليوم؟</h3>
+  <div class="grid" id="services">
+   <button class="service active" data-service="مطاعم"><span class="ico">🍔</span><strong>مطاعم</strong></button>
+   <button class="service" data-service="بقالة وسوبرماركت"><span class="ico">🛒</span><strong>بقالة وسوبرماركت</strong></button>
+   <button class="service" data-service="صيدليات"><span class="ico">💊</span><strong>صيدليات</strong></button>
+   <button class="service" data-service="خضار وفواكه"><span class="ico">🥑</span><strong>خضار وفواكه</strong></button>
+   <button class="service" data-service="ملابس وتجميل"><span class="ico">👕</span><strong>ملابس وتجميل</strong></button>
+   <button class="service" data-service="إلكترونيات"><span class="ico">📱</span><strong>إلكترونيات</strong></button>
+   <button class="service" data-service="هدايا"><span class="ico">🎁</span><strong>هدايا</strong></button>
+   <button class="service" data-service="طلب خاص"><span class="ico">📦</span><strong>طلب خاص</strong></button>
+  </div>
+ </section>
+ <section class="card">
+  <h3 class="section-title">تفاصيل التوصيل</h3>
+  <form id="orderForm">
+   <div class="row">
+    <div><label for="name">الاسم</label><input id="name" required placeholder="اسمك"></div>
+    <div><label for="phone">رقم الموبايل</label><input id="phone" required inputmode="tel" placeholder="09xxxxxxxx"></div>
+   </div>
+   <label for="area">المنطقة ضمن محافظة حمص</label>
+   <select id="area" required>
+    <option value="">اختر المنطقة</option>
+    <option>مدينة حمص</option><option>الرستن</option><option>تلبيسة</option><option>تلكلخ</option><option>القصير</option><option>المخرّم</option><option>تدمر</option><option>القريتين</option><option>الحولة</option><option>ريف حمص — منطقة أخرى</option>
+   </select>
+   <label for="address">العنوان بالتفصيل</label><input id="address" required placeholder="الحي، الشارع، أقرب نقطة دلالة">
+   <label for="details">شو الطلب؟</label><textarea id="details" required placeholder="اكتب تفاصيل طلبك..."></textarea>
+   <label for="notes">ملاحظات إضافية (اختياري)</label><input id="notes" placeholder="أي تفاصيل بتساعد المندوب">
+   <button class="btn" type="submit">إرسال طلب تجريبي</button>
+   <p class="note">هذه نسخة أولية للعرض والتجربة. إرسال الطلب هنا لا يرسل طلباً فعلياً إلى مندوب؛ يلزم ربط التطبيق بخادم ونظام إدارة قبل التشغيل التجاري.</p>
+   <div class="status" id="status" role="status"></div>
+  </form>
+ </section>
+ <section class="card">
+  <h3 class="section-title">FAST GO — حمص أولاً، سوريا ثم العالم</h3>
+  <p class="note">تم تجهيز الهيكل ليبدأ بمحافظة حمص، مع قابلية إضافة المحافظات السورية لاحقاً، ثم خدمات الشحن الدولي ضمن مراحل مستقلة.</p>
+  <p style="margin:12px 0 0">للتواصل: <span class="phone">09355019111</span></p>
+ </section>
+</main>
+<footer>© FAST GO — فاست غو</footer>
+<script>
+let selected='مطاعم';
+document.querySelectorAll('.service').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.service').forEach(x=>x.classList.remove('active'));
+ b.classList.add('active'); selected=b.dataset.service;
+}));
+document.getElementById('orderForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const id='FG-'+Math.random().toString(36).slice(2,7).toUpperCase();
+ const name=document.getElementById('name').value.trim();
+ document.getElementById('status').style.display='block';
+ document.getElementById('status').innerHTML='تم تجهيز طلب تجريبي يا '+name+' ✅<br>رقم الطلب: <b>'+id+'</b><br>نوع الخدمة: '+selected+'<br><small>هذا الرقم تجريبي ومحفوظ داخل هذه الصفحة فقط.</small>';
+});
+</script>
+</body></html>
